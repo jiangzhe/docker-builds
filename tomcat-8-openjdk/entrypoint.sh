@@ -8,7 +8,7 @@ if [ ! -z "$CGROUP_MEM_LIMIT" ];then
     # part of cgroup memory limit as max heap size
     JVM_HEAP_PERCENTAGE=${JVM_HEAP_PERCENTAGE:-80}
     # calculate jvm heap
-    JVM_HEAP_MB=`expr $CGROUP_MEM_LIMIT / 1024 / 1024 * $JVM_HEAP_PERCENTAGE / 100`
+    JVM_HEAP_MB=`expr $CGROUP_MEM_LIMIT / 1024 / 1024 \* $JVM_HEAP_PERCENTAGE / 100`
     # max heap size is limited as 30GB
     if [ $JVM_HEAP_MB -gt 30720 ]; then
         JVM_HEAP_MB=30720
