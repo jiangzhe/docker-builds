@@ -4,7 +4,7 @@
 CGROUP_MEM_LIMIT=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
 
 # only when cgroup memory limit present, calculate and set heap arguments
-if [ -z "$CGROUP_MEM_LIMIT" ];then
+if [ ! -z "$CGROUP_MEM_LIMIT" ];then
     # part of cgroup memory limit as max heap size
     JVM_HEAP_PERCENTAGE=${JVM_HEAP_PERCENTAGE:-80}
     # calculate jvm heap
