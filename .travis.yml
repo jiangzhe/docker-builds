@@ -13,6 +13,7 @@ after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     set -e;
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push jiangz/rust-musl-builder;
+    docker push jiangz/tomcat:8.0-openjdk;
+    docker logout;
     fi
 
